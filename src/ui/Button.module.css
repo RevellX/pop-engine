@@ -1,0 +1,54 @@
+.button {
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  border: 4px solid white;
+  border-radius: 5px;
+  margin: 0 0.5rem;
+}
+
+.button:hover {
+  filter: brightness(0.8);
+}
+
+.button:disabled {
+  filter: brightness(0.4);
+  cursor: not-allowed;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+  color: black;
+}
+
+.gray {
+  background-color: gray;
+  color: black;
+}
+
+.big {
+  font-size: 1.5rem;
+  padding: 0.8rem;
+}
+
+.medium {
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.small {
+  font-size: 0.8rem;
+  padding: 0.3rem;
+}

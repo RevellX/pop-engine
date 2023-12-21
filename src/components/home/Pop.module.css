@@ -1,0 +1,40 @@
+.pop {
+  min-width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+.pop > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem;
+  border-radius: 5px;
+  border: 4px solid gray;
+}
+
+.pop > div:first-child {
+  width: 6rem;
+  height: 6rem;
+  z-index: 1;
+  background-color: rgb(65, 65, 65);
+  color: white;
+}
+
+.pop > div:not(:first-child) {
+  height: 4.5rem;
+  width: 12rem;
+  border-left: none;
+  position: relative;
+  left: -10px;
+  color: black;
+  background-color: rgb(225, 225, 225);
+}
+
+.pop input {
+  width: 2rem;
+  height: 2rem;
+}
