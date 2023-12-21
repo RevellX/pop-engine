@@ -1,4 +1,4 @@
-export const API_URL = "http://localhost:5000/api/";
+export const API_URL = "http://51.77.35.148:5000/api/";
 
 export const LOGIN_URL = API_URL + "authenticate"; // POST
 export const POPS_URL = API_URL + "duties"; // GET
