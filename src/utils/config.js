@@ -1,4 +1,4 @@
-export const API_URL = "https://revellx-engine:5000/api/";
+export const API_URL = "https://localhost:5000/api/";
 
 export const LOGIN_URL = API_URL + "authenticate"; // POST
 export const POPS_URL = API_URL + "duties"; // GET
