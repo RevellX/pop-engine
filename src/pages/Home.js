@@ -38,7 +38,7 @@ const HomePage = () => {
 };
 
 async function loadPops() {
-  let response = await fetch(POPS_URL, { mode: "cors" });
+  let response = await fetch(POPS_URL);
   if (!response.ok)
     throw new Error({ message: "Error while fetching pops." });
 
