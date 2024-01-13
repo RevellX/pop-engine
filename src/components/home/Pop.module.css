@@ -16,6 +16,16 @@
   border: 4px solid gray;
 }
 
+.pop .today {
+  border: 4px solid orange;
+}
+
+.spacer {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 4px solid black;
+}
+
 .pop > div:first-child {
   width: 6rem;
   height: 6rem;

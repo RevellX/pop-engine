@@ -97,8 +97,12 @@ function List({ pops }) {
         )}
 
         <ul className={classes.list}>
-          {pops.map((pop) => {
+          {pops.map((pop, index) => {
             const popDate = new Date(pop.date);
+            let nextPopDate = undefined;
+            if (index < pops.length - 1) {
+              nextPopDate = new Date(pops[index + 1].date);
+            }
             return (
               <Pop
                 key={pop.id}
@@ -108,6 +112,12 @@ function List({ pops }) {
                 name={pop.user.username}
                 isSelected={selectedPops.includes(pop.id)}
                 selectPop={selectPopHandler}
+                isHighlighted={index === 0 ? true : false}
+                spacerAfter={
+                  nextPopDate
+                    ? popDate.getDay() > nextPopDate.getDay()
+                    : false
+                }
               />
             );
           })}
