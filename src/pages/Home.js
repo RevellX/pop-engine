@@ -24,7 +24,7 @@ const HomePage = () => {
           <Await
             resolve={loaderData.pops}
             errorElement={
-              <p>Wystąpił błąd podczas ładowanie popołudniówek</p>
+              <p>Wystąpił błąd podczas ładowania popołudniówek</p>
             }
           >
             {(pops) => {
@@ -74,7 +74,7 @@ export async function action({ request }) {
     await fetch(POP_DELETE_URL, {
       method: "DELETE",
       body: JSON.stringify({
-        dutyOne: popId,
+        dutyId: popId,
       }),
       headers: {
         "Content-Type": "application/json",

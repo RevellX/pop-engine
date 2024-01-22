@@ -1,5 +1,9 @@
 .wrapper {
-  padding: 35px;
+  padding: 20px 35px;
+}
+
+.wrapper > h1 {
+  margin-bottom: 0.8em;
 }
 
 .form_group {
@@ -19,10 +23,19 @@
 }
 
 .form_group input {
+  background-color: var(--main-font-background);
+  color: var(--main-font-color);
   padding: 10px;
   border-radius: 5px;
   font-size: 0.8rem;
   text-align: center;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  background: var(--main-font-background);
 }
 
 .form_group button {
@@ -31,10 +44,10 @@
 }
 
 .valid {
-  border: 2px solid dimgray;
+  border: 2px solid var(--main-font-color);
 }
 
 .invalid {
-  border: 2px solid rgba(255, 0, 0, 0.4);
+  border: 2px solid var(--highlight-font-color);
   background-color: rgba(250, 0, 0, 0.05);
 }

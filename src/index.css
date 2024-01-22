@@ -1,3 +1,14 @@
+:root {
+  --background-color: #0e223b;
+  --background-color-phase-2: #0e223b;
+  --background-color-phase-3: #04060f;
+  --main-color: #162234;
+  --highlight-color: #00000c;
+  --main-font-color: #97d0fe;
+  --main-font-background: #2f5384;
+  --highlight-font-color: crimson;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +21,15 @@ body {
     "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #d9d7d7;
+  /* background-color: #d9d7d7; */
+  color: var(--main-font-color);
+  background: var(--background-color);
+  background: radial-gradient(
+    circle,
+    var(--background-color) 0%,
+    var(--background-color-phase-2) 33%,
+    var(--background-color-phase-3) 100%
+  );
 }
 
 ul {
@@ -25,18 +44,19 @@ a {
 header,
 main,
 footer {
-  background-color: #c9c7c7;
+  /* background-color: #c9c7c7; */
   display: flex;
   margin: auto;
+  justify-content: center;
 }
 
 header {
   min-height: 55px;
-  border-bottom: 3px solid black;
+  /* border-bottom: 3px solid #97d0fe; */
 }
 
 footer {
-  border-top: 3px solid black;
+  /* border-top: 3px solid #97d0fe; */
   min-height: 55px;
 }
 

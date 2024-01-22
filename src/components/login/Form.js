@@ -36,7 +36,7 @@ function Form() {
     const login = loginRef.current.value;
     if (
       login.length < 3 ||
-      login.length > 12 ||
+      login.length > 64 ||
       !/^[a-zA-Z0-9]+$/.test(login)
     ) {
       setLoginIsValid(false);
@@ -48,7 +48,7 @@ function Form() {
 
   const validatePassword = () => {
     const password = passwordRef.current.value;
-    if (password.length < 4 || password.length > 12) {
+    if (password.length < 4 || password.length > 64) {
       setPasswordIsValid(false);
       return false;
     }
@@ -70,6 +70,7 @@ function Form() {
   return (
     <form onSubmit={onSubmitHandler} method='POST'>
       <Card className={classes.wrapper}>
+        <h1>Revellx-Engine</h1>
         <div className={classes.form_group}>
           <label htmlFor='login'>Login</label>
           <input
@@ -84,7 +85,7 @@ function Form() {
           />
         </div>
         <div className={classes.form_group}>
-          <label htmlFor='password'>Password</label>
+          <label htmlFor='password'>Hasło</label>
           <input
             className={`${
               passwordIsValid ? classes.valid : classes.invalid
@@ -103,7 +104,7 @@ function Form() {
         )}
         <div className={classes.form_group}>
           <button disabled={isWorking ? true : false} type='submit'>
-            {isWorking ? "Logging in..." : "Login"}
+            {isWorking ? "Logowanie ..." : "Zaloguj"}
           </button>
         </div>
       </Card>

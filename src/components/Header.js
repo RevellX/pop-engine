@@ -9,11 +9,7 @@ function Header() {
   return (
     <header className={classes.header}>
       <Link className={classes.brand} to='/'>
-        <h3>
-          Pop
-          <br />
-          Engine
-        </h3>
+        <h3>R-Engine</h3>
       </Link>
       <nav className={classes.nav}>
         <NavLink

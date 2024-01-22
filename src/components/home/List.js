@@ -76,7 +76,7 @@ function List({ pops }) {
             onClose={closeDelete}
           />
         )}
-        <h2>Wykaz popołudniówek</h2>
+        <h2>Jerzowe Popołudniówki</h2>
         {userCtx.isLoggedIn && userCtx.isModerator && (
           <>
             <Button
