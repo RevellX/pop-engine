@@ -19,30 +19,29 @@ function Header() {
             isActive ? classes.active : undefined
           }
         >
-          Popki
+          Menu
         </NavLink>
-        {/* <NavLink
-          to={"/guide"}
-          end
+        <NavLink
+          to={"/pops"}
           className={({ isActive }) =>
             isActive ? classes.active : undefined
           }
         >
-          Guide
-        </NavLink> */}
+          Popki
+        </NavLink>
+        {userCtx.hasPermission("finance.list") && (
+          <NavLink
+            to={"/finance"}
+            end
+            className={({ isActive }) =>
+              isActive ? classes.active : undefined
+            }
+          >
+            Wydatki
+          </NavLink>
+        )}
         {userCtx.isLoggedIn && (
           <>
-            {userCtx.isAdmin && (
-              <NavLink
-                to={"/menu"}
-                end
-                className={({ isActive }) =>
-                  isActive ? classes.active : undefined
-                }
-              >
-                Panel
-              </NavLink>
-            )}
             <NavLink
               to={"/logout"}
               end

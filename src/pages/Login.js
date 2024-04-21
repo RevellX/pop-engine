@@ -3,6 +3,7 @@ import Form from "../components/login/Form";
 import { LOGIN_URL } from "../utils/config";
 import { useContext } from "react";
 import UserContext from "../store/authUserContext";
+import Main from "../ui/main/MainCenter";
 
 function LoginPage() {
   const actionData = useActionData();
@@ -14,7 +15,11 @@ function LoginPage() {
     return <Navigate to={"/"} replace={true} />;
   }
 
-  return <Form />;
+  return (
+    <Main>
+      <Form />
+    </Main>
+  );
 }
 
 export async function action({ request }) {

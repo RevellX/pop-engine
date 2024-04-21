@@ -6,6 +6,7 @@
   --highlight-color: #00000c;
   --main-font-color: #97d0fe;
   --main-font-background: #2f5384;
+  --secondary-font-color: #5790ae;
   --highlight-font-color: crimson;
 }
 
@@ -41,13 +42,17 @@ a {
   color: inherit;
 }
 
+dialog {
+  position: relative;
+}
+
 header,
 main,
 footer {
   /* background-color: #c9c7c7; */
   display: flex;
   margin: auto;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 header {

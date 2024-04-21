@@ -40,13 +40,15 @@ function Pop({
         <span>{name}</span>
         <span>{shortcut}</span>
       </div>
-      {userCtx.isLoggedIn && userCtx.isModerator && (
-        <input
-          type='checkbox'
-          checked={isSelected}
-          onChange={checkChangeHandler}
-        />
-      )}
+      {userCtx.isLoggedIn &&
+        (userCtx.hasPermission("duties.swap") ||
+          userCtx.hasPermission("duties.delete")) && (
+          <input
+            type='checkbox'
+            checked={isSelected}
+            onChange={checkChangeHandler}
+          />
+        )}
     </li>
   );
 }

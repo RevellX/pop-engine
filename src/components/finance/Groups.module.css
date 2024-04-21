@@ -1,0 +1,54 @@
+.groups {
+  border-bottom: 4px solid var(--main-font-color);
+  width: 80%;
+  padding: 0.8em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.header {
+  display: flex;
+  column-gap: 0.25rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 0.5em;
+}
+
+.buttons button {
+  min-width: 1.3rem;
+}
+
+.buttons_group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.buttons_row {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.active {
+  background-color: var(--secondary-font-color);
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

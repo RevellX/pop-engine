@@ -8,9 +8,7 @@ const RootLayout = () => {
     <>
       <UserContextProvider>
         <Header />
-        <main>
-          <Outlet />
-        </main>
+        <Outlet />
         <Footer />
       </UserContextProvider>
     </>

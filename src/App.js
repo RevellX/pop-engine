@@ -1,21 +1,20 @@
 import {
   createBrowserRouter,
-  Navigate,
-  Outlet,
   RouterProvider,
 } from "react-router-dom";
 
-import HomePage, {
+import PopsPage, {
   loader as popsLoader,
   action as popsSwapAction,
-} from "./pages/Home";
+} from "./pages/Pops";
 import RootLayout from "./pages/Root";
 import ErrorPage from "./pages/Error";
 // import GuidePage, { loader as guidesLoader } from "./pages/Guide";
 import LoginPage, { action as loginAction } from "./pages/Login";
 import LogoutPage from "./pages/Logout";
-import MenuPage from "./pages/menu/Menu";
-import { getLoggedUser } from "./utils/token";
+import HomePage from "./pages/Home";
+import FinancePage from "./pages/Finance";
+import TogglePage from "./components/pops/Toggle";
 
 const router = createBrowserRouter([
   {
@@ -26,14 +25,23 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
-        loader: popsLoader,
-        action: popsSwapAction,
       },
-      // {
-      //   path: "guide",
-      //   element: <GuidePage />,
-      //   loader: guidesLoader,
-      // },
+      {
+        path: "pops",
+        children: [
+          {
+            index: true,
+            loader: popsLoader,
+            action: popsSwapAction,
+            element: <PopsPage />,
+          },
+          { path: "toggle", element: <TogglePage /> },
+        ],
+      },
+      {
+        path: "finance",
+        element: <FinancePage />,
+      },
       {
         path: "login",
         element: <LoginPage />,
@@ -43,22 +51,9 @@ const router = createBrowserRouter([
         path: "logout",
         element: <LogoutPage />,
       },
-      {
-        path: "menu",
-        element: <OnlyForAdmin />,
-        children: [{ index: true, element: <MenuPage /> }],
-      },
     ],
   },
 ]);
-
-function OnlyForAdmin() {
-  const user = getLoggedUser();
-
-  if (user && user.type === "admin") return <Outlet />;
-
-  return <Navigate to={"/"} replace={true} />;
-}
 
 function App() {
   return <RouterProvider router={router} />;

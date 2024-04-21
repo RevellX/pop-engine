@@ -3,12 +3,17 @@ import classes from "./List.module.css";
 import Card from "../../ui/Card";
 import { useContext, useState } from "react";
 import Button from "../../ui/Button";
-import { useNavigation, useSubmit } from "react-router-dom";
+import {
+  useNavigate,
+  useNavigation,
+  useSubmit,
+} from "react-router-dom";
 import UserContext from "../../store/authUserContext";
 import Modal from "../../ui/Modal";
 
 function List({ pops }) {
   const submit = useSubmit();
+  const navigate = useNavigate();
   const navigation = useNavigation();
   const userCtx = useContext(UserContext);
   const [selectedPops, setSelectedPops] = useState([]);
@@ -77,22 +82,32 @@ function List({ pops }) {
           />
         )}
         <h2>Jerzowe Popołudniówki</h2>
-        {userCtx.isLoggedIn && userCtx.isModerator && (
+        {userCtx.isLoggedIn && (
           <>
-            <Button
-              disabled={selectedPops.length !== 2 || isWorking}
-              color='yellow'
-              onClick={swapPop}
-            >
-              {isWorking ? "Działanie..." : "Zamień popki"}
-            </Button>
-            <Button
-              disabled={selectedPops.length !== 1 || isWorking}
-              color='red'
-              onClick={openDelete}
-            >
-              {isWorking ? "Działanie..." : "Usuń popkę"}
-            </Button>
+            {userCtx.hasPermission("duties.swap") && (
+              <Button
+                disabled={selectedPops.length !== 2 || isWorking}
+                color='yellow'
+                onClick={swapPop}
+              >
+                {isWorking ? "Działanie..." : "Zamień"}
+              </Button>
+            )}
+
+            {userCtx.hasPermission("duties.delete") && (
+              <Button
+                disabled={selectedPops.length !== 1 || isWorking}
+                color='red'
+                onClick={openDelete}
+              >
+                {isWorking ? "Działanie..." : "Usuń"}
+              </Button>
+            )}
+            {userCtx.hasPermission("duties.toggle") && (
+              <Button onClick={() => navigate("toggle")}>
+                {isWorking ? "Działanie..." : "Wybierz"}
+              </Button>
+            )}
           </>
         )}
 
